@@ -1,3 +1,5 @@
+/* ---- Cambiar @import por @use y @forward ----*/
+
 // Base:
 @import './base/reset'; 
 @import './base/typo';
@@ -5,5 +7,8 @@
 // Utilities:
 @import './util/variables';
 @import './util/mixins';
+
+// Components:
+@import './components/navbar';
 
 // Layout:
