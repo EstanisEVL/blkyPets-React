@@ -1,0 +1,15 @@
+.hero_container{
+    margin: 5rem 0 5rem 0;
+    @include flexbox(flex, row, nowrap, center, center);
+    .hero{
+        font-size: 4rem;
+        .hero_span{
+            font-weight: bold;
+            color: transparent;
+            background: -webkit-linear-gradient(to right, $secondary, $quaternary);
+            background: linear-gradient(to right, $secondary, $quaternary);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    }
+}
