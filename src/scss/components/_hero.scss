@@ -1,3 +1,5 @@
+@use '../util/forwards' as *;
+
 .hero_container{
     margin: 5rem 0 5rem 0;
     @include flexbox(flex, row, nowrap, center, center);
