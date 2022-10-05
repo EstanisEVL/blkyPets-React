@@ -12,7 +12,7 @@
             ul{
                 align-items: center;
                 li{
-                    a{
+                    .nav-link{
                         color: $bg-main;
                         text-transform: uppercase;
                         transition: all 0.3s ease;

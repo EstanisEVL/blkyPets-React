@@ -1,0 +1,5 @@
+@use '../util/forwards' as *;
+
+.main_container{
+    @include flexbox(flex, column, nowrap, center, center)
+}

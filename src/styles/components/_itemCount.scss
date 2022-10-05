@@ -1,0 +1,44 @@
+@use '../util/forwards' as *;
+
+.itemCount-container{
+  // @include flexbox(flex, column, nowrap, center, center);
+  background-color: $bg-secondary;
+  .itemCount-main-div{
+    @include flexbox(flex, column, nowrap, center, center);
+    margin-top: 2rem;
+    .main-div_countInput{
+      @include flexbox(flex, row, nowrap, center, center);
+      .counter-form{
+        padding: 1rem;
+        min-width: 10rem;
+        font-size: 2rem;
+        text-align: center;
+      }
+      .counter-btn{
+        padding: 1rem 2rem 1rem 2rem;
+        color: $main;
+        border: 0.1rem solid $main;
+        font-size: 2rem;
+        transition: all 0.5s ease;
+        &:hover {
+          color: $bg-secondary;
+          background-color: $main;
+        }
+      }
+    }
+    .counter-addToCartBtn_container{
+      .addToCartBtn-btn{
+        margin-top: 2rem;
+        padding: 1rem 2rem 1rem 2rem;
+        color: $main;
+        border: 0.1rem solid $main;
+        font-size: 2rem;
+        transition: all 0.5s ease;
+        &:hover {
+          color: $bg-secondary;
+          background-color: $main;
+        }
+      }
+    }
+  }
+}

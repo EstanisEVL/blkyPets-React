@@ -1,0 +1,72 @@
+@use '../util/forwards' as *;
+
+.product-card-container{
+  .product-card-catalogue {
+    margin-bottom: 5rem;
+    @include flexbox(flex, row, wrap, center, center);
+    .product-card{
+      background-color: $bg-secondary;
+      a {
+        @include flexbox(flex, column, nowrap, center, center);
+        text-decoration: none;
+        .product-card-img{
+          width: 100%;
+        }
+        .product-card-title{
+          color: $main;
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+        .product-card-price{
+          color: $main;
+          font-size: 1.5rem;
+        }
+        .product-btn{
+          color: $main;
+          font-size: 1rem;
+          text-transform: uppercase;
+          padding: 1rem;
+          border: 0.1rem solid $main;
+          transition: all 0.5s ease;
+          &:hover{
+            color: $bg-main;
+            background-color: $main;
+          }
+        }
+      }
+    }
+  }
+}
+
+.product-detail-container{
+  background-color: $bg-secondary;
+  .product-detail{
+    @include flexbox(flex, row, nowrap, space-between, stretch);
+    text-decoration: none;
+    gap: 5rem;
+    .product-detail-img{
+      width: 50%;
+    }
+    .product-detail-text {
+      margin-top: 5rem;
+      @include flexbox(flex, column, nowrap, flex-start, stretch);
+      .product-detail-title{
+        color: $main;
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      .product-detail-description{
+        margin-top: 5rem;
+        color: $main;
+        font-size: 2rem;
+        font-weight: 400;
+      }
+      .product-detail-price{
+        margin-top: 10rem;
+        color: $main;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

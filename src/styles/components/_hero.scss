@@ -1,10 +1,10 @@
 @use '../util/forwards' as *;
 
-.hero_container{
+.hero-container{
     margin: 5rem 0 5rem 0;
     @include flexbox(flex, row, nowrap, center, center);
     .hero{
-        font-size: 4rem;
+        font-size: 3rem;
         .hero_span{
             font-weight: bold;
             color: transparent;
