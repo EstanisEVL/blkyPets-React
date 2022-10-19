@@ -1,0 +1,94 @@
+@use '../util/forwards' as *;
+
+.footer{
+  padding-top: 8rem;
+  background-color: $main;
+  .footer__contacto{
+    @include flexbox(flex, row, nowrap, space-around, stretch);
+    div{
+      width: 100%;
+      h2{
+        text-align: left;
+        color: $bg-main;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      .footer-product_container{
+        @include flexbox(flex, row, nowrap, center, center);
+        margin-top: 3rem;
+        div{
+          ul{
+            padding: 0;
+            li{
+              text-align: left;
+              list-style: none;
+              line-height: 5rem;
+              a{
+                color: $bg-main;
+                text-decoration: none;
+                transition: all 0.5s;
+                &:hover{
+                  color: $secondary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer__redes{
+    @include flexbox(flex, column, nowrap, flex-start, stretch);
+    h4{
+      margin-bottom: 2rem;
+      color: $bg-main;
+      font-weight: bold;
+    }
+    ul{
+      display: flex;
+      padding: 0;
+      li{
+        display: flex;
+        a{
+          transform: scale(0.75);
+          transition: all 0.3s;
+        &:hover{
+          transform: scale(1.1, 1.1);
+          }
+        }
+      }
+    }
+    div{
+      margin-top: 2rem;
+      @include flexbox(flex, column, nowrap, flex-start, stretch);
+      h4{
+          margin-bottom: 2rem;
+          color: $bg-main;
+      }
+    }
+  }
+  .footer__mediosDePago{
+    @include flexbox(flex, column, nowrap, flex-start, stretch);
+    h4{
+      color: $bg-main;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    .mediosDePago__galeria{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 2rem;
+    }
+  }
+  .footer__copyright{
+    text-align: right;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    a{
+      color: $bg-main;
+      text-decoration: none;
+    }
+  }
+}

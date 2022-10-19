@@ -1,70 +1,92 @@
 @use '../util/forwards' as *;
 
-.navbar_container{
-    background-color: $main;
-    padding-top: 1vw;
-    position: sticky;
-    top:0;
-    left:0;
-    z-index: 10000;
-    .navbar_main{
-        div{
-            ul{
-                align-items: center;
-                li{
-                    .nav-link{
-                        color: $bg-main;
-                        text-transform: uppercase;
-                        transition: all 0.3s ease;
-                        &:hover{
-                            color: $secondary;
-                        }
-                    }
+.navbar-container{
+  background-color: $main;
+  padding-top: 1vw;
+  position: sticky;
+  top:0;
+  left:0;
+  z-index: 10000;
+  .navbar_main{
+    .navbar-div{
+      width: 100%;
+      .navbar-nav{
+          @include flexbox(flex, row, nowrap, space-around, center);
+          .categories-div {
+            min-width: 40%;
+            @include flexbox(flex, row, nowrap, space-around, center);
+            .nav-item{
+              width: 100%;
+              @include flexbox(flex, row, nowrap, space-around, stretch);
+              .nav-link{
+                color: $bg-main;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                &:hover{
+                  color: $secondary;
                 }
-                .cart{
-                    &:hover{
-                        animation: bounce-top 2s infinite both;
-                    }
-                    @keyframes bounce-top {
-                        0% {
-                        transform: translateY(-4.5px);
-                        animation-timing-function: ease-in;
-                        opacity: 1;
-                        }
-                        24% {
-                        opacity: 1;
-                        }
-                        40% {
-                        transform: translateY(-2.4px);
-                        animation-timing-function: ease-in;
-                        }
-                        65% {
-                        transform: translateY(-1.2px);
-                        animation-timing-function: ease-in;
-                        }
-                        82% {
-                        transform: translateY(-0.6px);
-                        animation-timing-function: ease-in;
-                        }
-                        93% {
-                        transform: translateY(-0.4px);
-                        animation-timing-function: ease-in;
-                        }
-                        25%,
-                        55%,
-                        75%,
-                        87% {
-                        transform: translateY(0px);
-                        animation-timing-function: ease-out;
-                        }
-                        100% {
-                        transform: translateY(0px);
-                        animation-timing-function: ease-out;
-                        opacity: 1;
-                        }
-                    }
-                }
+              }
             }
-        }
+          }
+          .navbar-brand {
+            margin: 0;
+            padding: 0;
+            max-width: 10%;
+          }
+          .cart-container{
+            @include flexbox(flex, row, nowrap, center, center);
+            max-width: 10%;
+            .cart{
+              &:hover{
+                animation: bounce-top 2s infinite both;
+              }
+              @keyframes bounce-top {
+                0% {
+                transform: translateY(-4.5px);
+                animation-timing-function: ease-in;
+                opacity: 1;
+                }
+                24% {
+                opacity: 1;
+                }
+                40% {
+                transform: translateY(-2.4px);
+                animation-timing-function: ease-in;
+                }
+                65% {
+                transform: translateY(-1.2px);
+                animation-timing-function: ease-in;
+                }
+                82% {
+                transform: translateY(-0.6px);
+                animation-timing-function: ease-in;
+                }
+                93% {
+                transform: translateY(-0.4px);
+                animation-timing-function: ease-in;
+                }
+                25%,
+                55%,
+                75%,
+                87% {
+                transform: translateY(0px);
+                animation-timing-function: ease-out;
+                }
+                100% {
+                transform: translateY(0px);
+                animation-timing-function: ease-out;
+                opacity: 1;
+                }
+              }
+            }
+            span {
+              color: $bg-main;
+              padding: 1rem;
+              font-size: 2rem;
+              user-select: none;
+            }
+          }
+      }
     }
+  }
 }

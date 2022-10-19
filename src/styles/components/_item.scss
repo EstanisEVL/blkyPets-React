@@ -44,9 +44,6 @@
     @include flexbox(flex, row, nowrap, space-between, stretch);
     text-decoration: none;
     gap: 5rem;
-    .product-detail-img{
-      width: 50%;
-    }
     .product-detail-text {
       margin-top: 5rem;
       @include flexbox(flex, column, nowrap, flex-start, stretch);
@@ -62,7 +59,7 @@
         font-weight: 400;
       }
       .product-detail-price{
-        margin-top: 10rem;
+        margin-top: 5rem;
         color: $main;
         font-size: 3rem;
         font-weight: 700;

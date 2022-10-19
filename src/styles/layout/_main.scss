@@ -1,5 +1,6 @@
 @use '../util/forwards' as *;
 
 .main_container{
-    @include flexbox(flex, column, nowrap, center, center)
+  @include flexbox(flex, column, nowrap, center, center);
+  min-height: 70vh;
 }
