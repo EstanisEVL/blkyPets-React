@@ -1,12 +1,14 @@
-import React from 'react';
-import { useCartContext } from '../context/CartContext';
-import '../styles/main.scss';
+/*---- Importación de recursos ----*/
+import React, { useContext } from 'react';
+import Contexts from '../../utils/context/Contexts';
 
 const CartItem = ({ product }) => {
-const { removeItem } = useCartContext()
+
+  const context = useContext(Contexts.cartContext);
+  const { removeItem } = context;
 
   return(
-    <div className='cartItem'>
+    <div className='cart-item'>
       <img src={product.pictureUrl} alt={product.title}/>
       <div>
         <p>{product.title}</p>

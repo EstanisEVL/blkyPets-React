@@ -1,12 +1,13 @@
 /*---- Importación de recursos ----*/
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import cartImg from '../assets/img/gato_carrito.png';
-import { useCartContext } from '../context/CartContext';
+import Contexts from '../../utils/context/Contexts';
+import cartImg from '../../assets/img/gato_carrito.png';
 
 /*---- Renderiza el ícono del carrito ----*/
 const CartWidget = () => {
-  const { productsTotal } = useCartContext();
+  const context = useContext(Contexts.cartContext);
+  const { productsTotal } = context;
 
   return(
     <div className='cart-container'>
@@ -16,7 +17,7 @@ const CartWidget = () => {
         </Link>
       </li>
       <Link className='nav-link' to='/cart'>
-        <span>{productsTotal() || ''}</span>
+        <span>{ productsTotal() || '' }</span>
       </Link>
     </div>
   );

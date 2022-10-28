@@ -1,5 +1,4 @@
 /*---- Importación de recursos ----*/
-import '../styles/main.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 

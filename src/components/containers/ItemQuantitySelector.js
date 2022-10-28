@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 /*---- Componente compuesto de un botón y controles para incrementar y decrementar la cantidad requerida de items: ----*/
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemQuantitySelector = ({ initial, stock, onAdd }) => {
 
   const [ count, setCount ] = useState(parseInt(initial));
 
@@ -20,7 +20,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
   return(
     <>
-      <div className='input-group itemCount-main-div'>
+      <div className='input-group ItemQuantitySelector-main-div'>
         <div className='main-div_countInput'>
           <button className='counter-btn' type='button' disabled={ count <= 1 } onClick={ removeItem }>-</button>
           <span className='form-control counter-form'>{ count }</span>
@@ -34,4 +34,4 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   );
 };
 
-export default ItemCount;
+export default ItemQuantitySelector;

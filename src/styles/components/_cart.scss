@@ -1,1 +1,53 @@
 @use '../util/forwards' as *;
+
+/*---- Con productos en el carrito: ----*/
+.cart-main {
+  margin-top: 5rem;
+  @include flexbox(flex, row, nowrap, space-evenly, flex-start);
+  .cart-items-container {
+    @include flexbox(flex, column, nowrap, center, flex-start);
+    h2 {
+      margin-bottom: 5rem;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .cart-item {
+      @include flexbox(flex, row, nowrap, center, center);
+      gap: 2rem;
+      border-bottom: 0.1rem solid $main;
+      img {
+        width: 20rem;
+      }
+    }
+    .full-price-p {
+      margin: 5rem 0;
+      font-size: 24px;
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .checkout-form {
+    @include flexbox(flex, column, nowrap, center, center);
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+
+/*---- Sin productos en el carrito: ----*/
+.no-items-container {
+  height: 60vh;
+  @include flexbox(flex, column, nowrap, center, center);
+  .cart-p {
+    font-size: 36px;
+    user-select: none;
+  }
+  
+  .return-link {
+    font-size: 24px;
+    font-weight: bold;
+    color: $main;
+    text-decoration: none;
+  }
+}

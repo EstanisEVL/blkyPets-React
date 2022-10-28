@@ -1,9 +1,9 @@
 @use '../util/forwards' as *;
 
-.itemCount-container{
+.ItemQuantitySelector-container{
   margin-top: 5rem;
   background-color: $bg-secondary;
-  .itemCount-main-div{
+  .ItemQuantitySelector-main-div{
     @include flexbox(flex, column, nowrap, center, flex-start);
     margin-top: 2rem;
     .main-div_countInput{

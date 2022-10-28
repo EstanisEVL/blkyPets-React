@@ -1,21 +1,14 @@
 /*---- Importación de recursos ----*/
 import { NavLink } from 'react-router-dom';
-import { NavBarCategories1, NavBarCategories2 } from './NavBarCategories';
-import logo from '../assets/img/logo0blanco.png';
+import NavBarCategories from '../containers/NavBarCategories';
+import logo from '../../assets/img/logo0blanco.png';
 
-/*---- Lista de componentes de presentación del NavBar y el Footer: ----*/
+/*---- Lista de componentes de presentación del NavBar: ----*/
 const UtilComponents = {
-  Categories1 : () => {
+  Categories : () => {
     return(
       <>
-        <NavBarCategories1 />
-      </>
-    );
-  },
-  Categories2 : () => {
-    return(
-      <>
-        <NavBarCategories2 />
+        <NavBarCategories />
       </>
     );
   },
