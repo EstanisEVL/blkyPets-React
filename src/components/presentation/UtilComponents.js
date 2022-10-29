@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import NavBarCategories from '../containers/NavBarCategories';
 import logo from '../../assets/img/logo0blanco.png';
 
-/*---- Lista de componentes de presentación del NavBar: ----*/
+/*---- Lista de componentes de presentación de la barra de navegación y bienvenida: ----*/
 const UtilComponents = {
   Categories : () => {
     return(
@@ -19,7 +19,9 @@ const UtilComponents = {
   },
   Welcome : () => {
     return(
-      <p className='hero'>¡Bienvenido a BLKY Pets! Aquí podrás ver un listado de los productos disponibles:</p>
+      <>
+        <h1 className='welcome-h1'><span>BLKY PETS.</span> Diseñamos accesorios únicos, como tu mascota.</h1>
+      </>
     )
   }
 };

@@ -22,7 +22,7 @@ const Footer = () => {
     <footer>
       <Container fluid className='footer'>
         <Row>
-          <Col lg={4} className='footer__contacto'>
+          <Col lg={{ span:3, offset:1 }} className='footer-contacto'>
             <div>
               <h2 className='h2'>Productos</h2>
               <div className='footer-product_container'>
@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-          <Col lg={4} className='footer__redes'>
+          <Col lg={{ span:3, offset:1 }} className='footer__redes'>
             <h4 className='h4'>Seguinos</h4>
             <ul>
               <li><a href='https://www.facebook.com/BLKYpets'><img className='img-fluid' src={ facebookImg } alt='icono facebook' title='facebook' /></a></li>
@@ -71,7 +71,7 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg={11} className='footer__copyright'>
-            <a className='fs-5' href='https://github.com/EstanisEVL'><img src={ heyWebImg } alt='HEY! desarrollo web' /> © | Todos los derechos reservados.</a>
+            <a className='fs-5' href='https://github.com/EstanisEVL'>©<img src={ heyWebImg } alt='HEY! desarrollo web' /> | Todos los derechos reservados.</a>
           </Col>
         </Row>
       </Container>

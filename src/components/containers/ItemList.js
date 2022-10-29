@@ -3,7 +3,7 @@ import React from 'react';
 import Item from '../presentation/Item';
 import CircleLoader from "react-spinners/ClipLoader";
 
-/*---- Agrupada el set de componentes 'Item', recibe la prop 'items' y se encarga de mapear los items del arreglo de productos al componente '<Item … />': ----*/
+/*---- Agrupa el set de componentes y se encarga de mapear los productos para renderizarlos: ----*/
 const ItemList = ({ items }) => {
   return(
     items.length > 0

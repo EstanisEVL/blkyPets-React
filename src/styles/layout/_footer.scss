@@ -4,9 +4,10 @@
   margin: 0;
   padding-top: 5rem;
   background-color: $main;
-  .footer__contacto{
-    @include flexbox(flex, row, nowrap, space-around, stretch);
+  .footer-contacto{
+    @include flexbox(flex, row, nowrap, center, center);
     div{
+      width: 100%;
       h2{
         text-align: left;
         color: $bg-main;
@@ -14,7 +15,7 @@
         margin-bottom: 1rem;
       }
       .footer-product_container{
-        @include flexbox(flex, row, nowrap, center, center);
+        @include flexbox(flex, row, nowrap, space-between, center);
         margin-top: 3rem;
         div{
           ul{

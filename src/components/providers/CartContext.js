@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { DateTime } from 'luxon';
@@ -6,14 +6,15 @@ import Contexts from '../../utils/context/Contexts';
 
 const MySwal = withReactContent(Swal);
 
+const cartStorage = JSON.parse(localStorage.getItem('cart') || '[]');
+
 const CartContext = ({ children }) => {
-  const [ cart, setCart ] = useState([]);
+  // El estado inicial del carrito será el que encuentre en el localStorage:
+  const [ cart, setCart ] = useState(cartStorage);
   
   const isInCart = ( id ) => cart.find(product => product.id === id) ? true : false;
 
   // Agregar un producto al carrito:
-  // No acepta duplicados.
-  // Acumula cantidades.
   const addItem = ( item, quantity ) => {
     if(isInCart(item.id)){
       setCart(cart.map(product => {
@@ -42,14 +43,17 @@ const CartContext = ({ children }) => {
   const setOrderState = () => {
     return 'generada';
   }
-  // Asignar fecha de la orden:
+  // Asignar fecha a la orden:
   const setOrderDate = () => {
     const now = DateTime.now()
     return now.toLocaleString(DateTime.DATETIME_FULL);
   }
-
-  // Total de productos en el cartWidget:
+  // Calcular y mostrar la cantidad total de productos en el CartWidget:
   const productsTotal = () => cart.reduce((acc, selectedProduct) => acc + selectedProduct.quantity, 0);
+  // Guarda el estado del carrito en el localStorage:
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [ cart ]);
 
   return(
     <Contexts.cartContext.Provider value={{

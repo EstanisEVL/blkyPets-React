@@ -12,7 +12,7 @@ import ItemList from '../containers/ItemList';
 
 const MySwal = withReactContent(Swal);
 
-/*---- Componente contenedor que muestra un mensaje de bienvenida y hace la petición a la base de datos: ----*/
+/*---- Componente contenedor que muestra un mensaje de bienvenida y renderiza la colección de productos desde Firestore la base de datos en Firebase: ----*/
 const ItemListContainer = () => {
   const [ items, setItems ] = useState([]);
   const { categoryId } = useParams();
@@ -48,12 +48,10 @@ const ItemListContainer = () => {
 
   return(
     <main>
-      <Container fluid className='main_container'>
-        <Row className='hero-container'>
-          <UtilComponents.Welcome />
-        </Row>
-        <Row className='product-card-container'>
-          <Col lg={{span: 10, offset: 1}} className='product-card-catalogue'>
+      <Container fluid className='main-container'>
+        <UtilComponents.Welcome />
+        <Row className='product-card-catalogue'>
+          <Col className='product-card-container'>
             <ItemList items={ items }/>
           </Col>
         </Row>

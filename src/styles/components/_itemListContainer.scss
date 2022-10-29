@@ -1,0 +1,41 @@
+@use '../util/forwards' as *;
+
+.product-card-catalogue{
+  max-width: 90%;
+  margin-bottom: 10rem;
+  .product-card-container{
+    @include flexbox(flex, row, wrap, center, flex-start);
+    .product-card {
+      min-height: 40rem;
+      padding: 2rem;
+      @include flexbox(flex, column, wrap, space-between, center);
+      text-decoration: none;
+      user-select: none;
+      .product-card-img{
+        max-width: 100%;
+      }
+      .product-card-title{
+        color: $main;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .product-card-price{
+        color: $main;
+        font-size: 1.5rem;
+      }
+      .product-btn{
+        color: $main;
+        font-size: 1rem;
+        text-transform: uppercase;
+        padding: 1rem;
+        border: 0.1rem solid $main;
+        transition: all 0.5s ease;
+        &:hover{
+          color: $bg-main;
+          background-color: $main;
+        }
+      }
+    }
+  }
+}

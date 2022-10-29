@@ -1,56 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
-import { appFirebase } from '../utils/Firebase';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+import Contexts from '../../utils/context/Contexts';
 import { getAuth, signOut } from 'firebase/auth';
+import { collection, addDoc } from 'firebase/firestore';
+import { appFirebase } from '../../utils/Firebase';
+import { db } from '../../utils/Firebase';
 
+const MySwal = withReactContent(Swal);
 const auth = getAuth(appFirebase);
 
-const TestForm = ({ userEmail }) => {
-
-  // const initialValue = {
-  //   firstName: '',
-  //   lastName: '',
-  //   phone: '',
-  //   address: ''
-  // }
-
-  const order = {
-    buyer: {
-      firstName: '',
-      lastName: '',
-      phone: '',
-      address: ''
-    },
-    products: ''
-    // items: cart.map(product => ({ id: product.id, title: product.title, price: product.price, quantity: product.quantity })),
-    // total: fullPrice(),
-    // state: setOrderState(),
-    // date: setOrderDate(),
-  };
-
-  const [ buyer, setBuyer ] = useState(order);
+const CheckoutForm = ({ userEmail }) => {
+  
+  const context = useContext(Contexts.cartContext);
+  const { cart, fullPrice, setOrderDate, setOrderState, clear } = context;
+  const [ buyer, setBuyer ] = useState({});
+  const navigate = useNavigate();
 
   const captureInputs = (e) => {
-    const { name, value } = e.target;
-    setBuyer({ ...order.buyer, [ name ]: value });
+    setBuyer({ ...buyer,
+      [ e.target.name ]: e.target.value
+    });
   }
 
-  const saveData = async(e) => {
+  const saveData = (e) => {
     e.preventDefault();
-    console.log(order.buyer);
-    setBuyer({ ...order.buyer })
+    let order = {
+      buyer,
+      items: cart.map(product => ({ id: product.id, title: product.title, price: product.price, quantity: product.quantity })),
+      total: fullPrice(),
+      state: setOrderState(),
+      date: setOrderDate(),
+    };
+
+    const dbOrder = collection( db, 'orders' );
+    addDoc(dbOrder, order)
+    .then(({ id }) => MySwal.fire({
+      title: '¡Pedido confirmado!',
+      text: `En breve recibirás un correo electrónico con los datos de tu pedido. Código del pedido: ${id}`,
+      icon: 'success'
+    }));
+    clear(cart);
+    navigate('/');
   }
 
   return(
-    <div>
-      <p>Cesión iniciada, ¡bienvenido <strong>{ userEmail }</strong>!</p>
+    <div className='signedIn-checkout-container'>
       <Button variant='danger' onClick={ () => signOut(auth)}>
         Cerrar cesión
       </Button>
-      {/* Formulario */}
+      <p className='checkout-text'>Comprando como <span>{ userEmail }</span></p>
       <h3>Ingresá tus datos para finalizar la compra:</h3>
-      <Form className='checkout-form' onSubmit={ saveData }>
+      <Form className='signedIn-checkout-form' onSubmit={ saveData }>
         <Form.Group >
           <Form.Label>Nombre: </Form.Label>
           <Form.Control
@@ -58,7 +62,6 @@ const TestForm = ({ userEmail }) => {
             name='firstName'
             placeholder='Ingresá tu nombre'
             onChange={ captureInputs }
-            value={ order.buyer.firstName }
             required />
         </Form.Group>
         <Form.Group >
@@ -68,7 +71,6 @@ const TestForm = ({ userEmail }) => {
             name='lastName'
             placeholder='Ingresá tu apellido'
             onChange={ captureInputs }
-            value={ order.buyer.lastName }
             required />
         </Form.Group>
         <Form.Group >
@@ -78,7 +80,6 @@ const TestForm = ({ userEmail }) => {
             name='phone'
             placeholder='Ingresá tu número de teléfono'
             onChange={ captureInputs }
-            value={ order.buyer.phone }
             required />
         </Form.Group>
         <Form.Group >
@@ -88,15 +89,14 @@ const TestForm = ({ userEmail }) => {
           name='address'
           placeholder='Ingresá tu dirección'
           onChange={ captureInputs }
-          value={ order.buyer.address }
           required />
         </Form.Group>
         <Button type='submit' variant='dark'>
-          REALIZAR COMPRA
+          COMPRAR
         </Button>
       </Form>
     </div>
   );
 };
 
-export default TestForm;
+export default CheckoutForm;

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { db } from '../../utils/Firebase';
 import ItemDetail from './ItemDetail';
-import ItemError from '../presentation/ItemError';
+import Error404 from '../presentation/Error404';
 
 const MySwal = withReactContent(Swal);
 
@@ -36,7 +36,7 @@ const ItemDetailContainer = () => {
       });
   },[ itemId ]);
 
-  return item ? <ItemDetail item={ item } /> : <ItemError />;
+  return item ? <ItemDetail item={ item } /> : <Error404 />;
 };
 
 export default ItemDetailContainer;

@@ -1,36 +1,133 @@
 @use '../util/forwards' as *;
 
 /*---- Con productos en el carrito: ----*/
-.cart-main {
+.checkout-main {
   margin-top: 5rem;
+  min-height: 70vh;
   @include flexbox(flex, row, nowrap, space-evenly, flex-start);
-  .cart-items-container {
-    @include flexbox(flex, column, nowrap, center, flex-start);
-    h2 {
-      margin-bottom: 5rem;
-      font-size: 24px;
-      font-weight: bold;
-    }
-    .cart-item {
-      @include flexbox(flex, row, nowrap, center, center);
-      gap: 2rem;
-      border-bottom: 0.1rem solid $main;
-      img {
-        width: 20rem;
-      }
-    }
-    .full-price-p {
-      margin: 5rem 0;
-      font-size: 24px;
-      span {
-        font-weight: bold;
+  .checkout-container {
+    .checkout-row {
+      .checkout-col {
+        @include flexbox(flex, column, nowrap, flex-start, stretch);
+        gap: 2rem;
+        h2 {
+          margin-bottom: 5rem;
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+        .cart-item {
+          @include flexbox(flex, row, nowrap, flex-start, center);
+          gap: 2rem;
+          img {
+            width: 20rem;
+          }
+          div {
+            p {
+              font-size: 1.5rem;
+            }
+          }
+        }
+        .full-price-p {
+          margin: 5rem 0;
+          font-size: 2rem;
+          span {
+            font-weight: bold;
+          }
+        }
       }
     }
   }
-  .checkout-form {
-    @include flexbox(flex, column, nowrap, center, center);
+  .login-container {
+    @include flexbox(flex, column, nowrap, flex-start, stretch);
+    .registration-container {
+      align-self: flex-end;
+      margin-bottom: 5rem;
+    }
     h2 {
-      font-size: 24px;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .login-form {
+      label {
+        font-size: 1.8rem;
+      }
+      input {
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+      .login-form-small {
+        font-size: 1.5rem;
+      }
+      button {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+        margin-bottom: 10rem;
+      }
+    }
+  }
+  .checkout-form-container {
+    h2 {
+      margin-bottom: 5rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    div {
+      p {
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 2.5rem;
+      }
+      .checkout-form {
+        font-size: 2rem;
+      }
+    }
+  }
+  .signedIn-checkout-container {
+    @include flexbox(flex, column, nowrap, flex-start, stretch);
+    button {
+      align-self: flex-end;
+      margin-bottom: 5rem;
+    }
+    .checkout-text {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      span {
+        color: transparent;
+        background: -webkit-linear-gradient(to right, $secondary, $quaternary);
+        background: linear-gradient(to right, $secondary, $quaternary);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+    }
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .signedIn-checkout-form {
+      font-size: 1.5rem;
+      div {
+        label {
+          font-size: 1.8rem;
+        }
+        input {
+          font-size: 1.5rem;
+          padding: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+      button {
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+        margin-bottom: 10rem;
+      }
     }
   }
 }
@@ -43,7 +140,6 @@
     font-size: 36px;
     user-select: none;
   }
-  
   .return-link {
     font-size: 24px;
     font-weight: bold;
