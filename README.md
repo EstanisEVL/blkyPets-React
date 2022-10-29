@@ -10,11 +10,13 @@ Mi proyecto final, BLKY Pets, es un sitio web diseñado para la venta de accesor
 - Visualice el catálogo completo de productos disponibles.
 - Filtre por categorías utilizando el menú desplegable.
 - Ingrese al detalle de cada producto.
-- Elija la cantidad y luego agregue cada producto al carrito.
+- Elija la cantidad y luego agregue cada producto al carrito[^1].
 - Ingrese al carrito para ver un desglose de la compra.
 - Se registre o inicie sesión dependiendo de si ya está logueado o no.
 - Complete sus datos de compra.
-- Y genere la orden de compra al confirmar sus datos, recibiendo su id de la orden al finalizar.
+- Y genere la orden de compra al confirmar sus datos, recibiendo el id de la orden al finalizar.
+
+[^1]: Los productos ingresados al carrito se guardan en el localStorage para evitar que se borren los datos al recargar el sitio.
 
 Landing page:
 ![Landing page](./src/assets/img/BLKYPets-LandingPage-Screenshot.png)
