@@ -1,4 +1,4 @@
-<img src='images/LogoBLKYpng.png'>
+<img src='./src/assets/img/logo0.png'>
 
 ## Alumno:  
 [Estanislao Elías Varela Lucius](https://github.com/EstanisEVL/)
@@ -9,17 +9,27 @@
 Breve introducción del proyecto:
 Mi proyecto final, BLKY Pets, es un sitio web diseñado para la venta de accesorios para mascotas en formato e-commerce.
 
-Qué ideas/enfoque se eligió para el proyecto:
+Landing page:
+![Landing page](./src/assets/img/BLKYPets-LandingPage-Screenshot.png)
 
-![Landing page](image.jpg)
-![Catálogo](image.jpg)
-![Proceso de compra](image.jpg)
+Categorías dinámicas:
+![Landing page - categories](./src/assets/img/BLKYPets-LandingPage-Screenshot2.png)
+
+Detalle del producto:
+![Item detail](./src/assets/img/BLKYPets-ItemDetail-Screenshot.png)
+
+Carrito:
+![Cart](./src/assets/img/BLKYPets-Cart-Screenshot.png)
+
+Generación de orden de compra:
+![Checkout](./src/assets/img/BLKYPets-Checkout-Screenshot.png)
+
 
 ---
 
 ## Demo
 
-Para probar mi sitio ingresá al siguiente [link](...).
+Para probar mi sitio ingresá al siguiente [link](https://blkypetsreact.netlify.app/).
 
 ---
 
@@ -37,18 +47,28 @@ Finalmente creé el componente contenedor *ItemListContainer*, el cual recibe un
 7. **Cart View**:
 8. **Item Collection**:
 
+
 ---
 
-## Herramientas y dependencias utilizadas:
+## Tecnologías y herramientas utilizadas:
 
 <img src='src/assets/img/html.png'> <img src='src/assets/img/css.png'> <img src='src/assets/img/javascript.png'> <img src='src/assets/img/react.png'> <img src='src/assets/img/git.png'> <img src='src/assets/img/bootstrap.png'> <img src='src/assets/img/sass.png'> <img src='src/assets/img/npm.png'>
 
+
+### Librerías y dependencias implementadas:
+
 `sass v1.54.9` - [react sass](https://create-react-app.dev/docs/adding-a-sass-stylesheet/)
 Instalé la dependencia SASS para preprocesar CSS con el fin de mantener organizados todos los estilos de los distintos componentes en sus respectivos archivos y carpetas dentro de la carpeta *styles*.
+
+`react-bootstrap v.2.5.0` - [react-bootstrap](https://react-bootstrap.github.io/)
+Añadí react bootstrap para importar botones y estructurar visualmente el contenido del sitio con su sistema de grillas (Containers, Filas y Columnas).
+
 `react-spinners v.0.13.6` - [react-spinners npm](https://www.npmjs.com/package/react-spinners)
 Para agregar un elemento visual que le indique al usuario que el sitio está cargando ciertos elementos, instalé la dependencia react-spinners, la cual provee una colección de spinners de carga con React.js.
+
 `sweetalert2 v.11.6.2` - [sweetalert2](https://github.com/sweetalert2/sweetalert2-react-content)
 Con el fin de mejorar la experiencia de usuario estilizando las alertas instalé la dependencia SweetAlert2.
+
 `luxon v.3.0.4` - [luxon](https://moment.github.io/luxon/#/?id=luxon)
 Instalé la dependencia Luxon para darle formato a la fecha que se le asigna a cada orden que el usuario genera cuando realiza un pedido a través de la aplicación.
 
