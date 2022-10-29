@@ -8,7 +8,7 @@ import ItemQuantitySelector from './ItemQuantitySelector';
 
 /*---- Muestra la vista de detalle de un item: ----*/
 const ItemDetail = ({ item }) => {
-  const context = useContext(Contexts.cartContext);
+  const context = useContext(Contexts.CartContext);
   const { addItem } = context;
 
   const [ goToCart, setGoToCart] = useState(false);

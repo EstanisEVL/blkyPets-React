@@ -13,7 +13,7 @@ import CheckoutForm from './CheckoutForm';
 const auth = getAuth(appFirebase);
 
 const Checkout = () => {
-  const context = useContext(Contexts.cartContext);
+  const context = useContext(Contexts.CartContext);
   const { cart, fullPrice } = context;
 
   const [ user, setUser ] = useState(null);

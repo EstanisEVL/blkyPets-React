@@ -5,7 +5,7 @@ import Contexts from '../../utils/context/Contexts';
 
 const CartItem = ({ product }) => {
 
-  const context = useContext(Contexts.cartContext);
+  const context = useContext(Contexts.CartContext);
   const { removeItem } = context;
 
   return(

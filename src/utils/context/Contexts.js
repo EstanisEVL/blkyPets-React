@@ -3,7 +3,7 @@ import React from 'react';
 
 /*---- Creación de los contextos: ----*/
 const Contexts = {
-  cartContext: React.createContext([]),
+  CartContext: React.createContext([]),
 };
 
 export default Contexts;

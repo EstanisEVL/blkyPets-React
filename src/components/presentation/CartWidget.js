@@ -6,7 +6,7 @@ import cartImg from '../../assets/img/gato_carrito.png';
 
 /*---- Renderiza el ícono del carrito ----*/
 const CartWidget = () => {
-  const context = useContext(Contexts.cartContext);
+  const context = useContext(Contexts.CartContext);
   const { productsTotal } = context;
 
   return(

@@ -15,7 +15,7 @@ const auth = getAuth(appFirebase);
 
 const CheckoutForm = ({ userEmail }) => {
   
-  const context = useContext(Contexts.cartContext);
+  const context = useContext(Contexts.CartContext);
   const { cart, fullPrice, setOrderDate, setOrderState, clear } = context;
   const [ buyer, setBuyer ] = useState({});
   const navigate = useNavigate();
